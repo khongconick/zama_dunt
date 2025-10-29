@@ -1251,7 +1251,7 @@ const App: React.FC = () => {
         <div className="header-content">
           <div className="header-top-row">
             <div className="header-text">
-              <h1>🦆 Duck Hunt Game</h1>
+              <h1>Duck Hunt Game</h1>
               <p>Shoot ducks and stars! Secure gameplay with confidential rewards</p>
               <p className="powered-by">Powered by Zama Team</p>
             </div>
@@ -1371,64 +1371,6 @@ const App: React.FC = () => {
             </div>
           )}
           
-          {/* Combined Stats Panel - Remaining Turns + Total Score */}
-          {(remainingTurns > 0 || totalScore > 0) && (
-            <div className="stats-panel-unified">
-              <div className="stats-panel-header">
-                <div className="stats-panel-title"> Game Statistics</div>
-              </div>
-              
-              <div className="stats-grid">
-                {/* Remaining Turns */}
-                <div className="stat-item">
-                  <div className="stat-icon">🎮</div>
-                  <div className="stat-label">Remaining Turns</div>
-                  <div className="stat-value">{remainingTurns}</div>
-                </div>
-                
-                {/* Total Score */}
-                <div className="stat-item">
-                  <div className="stat-icon">🏆</div>
-                  <div className="stat-label">Total Score</div>
-                  <div className="stat-value">{totalScore}</div>
-                </div>
-              </div>
-              
-              {/* Submit Button - Only show if there's a score to submit */}
-              {totalScore > 0 && !scoreSubmitted && (
-                <button 
-                  className="btn btn-primary submit-score-btn"
-                  onClick={async () => {
-                    try {
-                      requireReady();
-                      const tx = await (fheUtils as any).contract.publishScore(totalScore);
-                      await tx.wait();
-                      setRaceMessage("Total score submitted to wallet!");
-                      setScoreSubmitted(true);
-                      await reloadUserState(true, true);
-                      setTimeout(() => {
-                        try { loadLeaderboard(); } catch {}
-                      }, 800);
-                    } catch (error) {
-                      console.error("Error submitting total score:", error);
-                      setRaceMessage("Error submitting score");
-                    }
-                  }}
-                  disabled={txStatus === "pending"}
-                >
-                   Submit Total Score
-                </button>
-              )}
-              
-              {/* Score Submitted Message */}
-              {scoreSubmitted && (
-                <div className="score-submitted-message">
-                  ✅ Score submitted successfully!
-                </div>
-              )}
-            </div>
-          )}
-          
           {/* No Turns Remaining Message */}
           {remainingTurns === 0 && totalTurns > 0 && totalScore === 0 && (
             <div className="no-turns-display">
@@ -1443,6 +1385,60 @@ const App: React.FC = () => {
 
       <div className="sidebar">
         {/* Your Balance section hidden */}
+
+        {/* Game Statistics - Moved to Sidebar */}
+        {(remainingTurns > 0 || totalScore > 0) && (
+          <div className="stats-panel-unified">
+            <div className="stats-grid">
+              {/* Remaining Turns */}
+              <div className="stat-item">
+                <div className="stat-icon">🎮</div>
+                <div className="stat-value">{remainingTurns}</div>
+                <div className="stat-label">Turns Left</div>
+              </div>
+              
+              {/* Total Score */}
+              <div className="stat-item stat-item-gold">
+                <div className="stat-icon">🏆</div>
+                <div className="stat-value">{totalScore}</div>
+                <div className="stat-label">Score</div>
+              </div>
+            </div>
+            
+            {/* Submit Button - Only show if there's a score to submit */}
+            {totalScore > 0 && !scoreSubmitted && (
+              <button 
+                className="btn btn-primary submit-score-btn"
+                onClick={async () => {
+                  try {
+                    requireReady();
+                    const tx = await (fheUtils as any).contract.publishScore(totalScore);
+                    await tx.wait();
+                    setRaceMessage("Total score submitted to wallet!");
+                    setScoreSubmitted(true);
+                    await reloadUserState(true, true);
+                    setTimeout(() => {
+                      try { loadLeaderboard(); } catch {}
+                    }, 800);
+                  } catch (error) {
+                    console.error("Error submitting total score:", error);
+                    setRaceMessage("Error submitting score");
+                  }
+                }}
+                disabled={txStatus === "pending"}
+              >
+                 Submit Total Score
+              </button>
+            )}
+            
+            {/* Score Submitted Message */}
+            {scoreSubmitted && (
+              <div className="score-submitted-message">
+                ✅ Score submitted successfully!
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="card">
           <h3 style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
@@ -1502,37 +1498,42 @@ const App: React.FC = () => {
           </div>
         </div>
 
-    {/* Daily Check-in Button - Moved below Leaderboard */}
-    <div style={{ textAlign: "center" }}>
-          <TypingButton
-            className="btn btn-success"
-            onClick={handleDailyGm}
-            disabled={!connected || !isReady || txStatus === "pending" || !canCheckin || isCheckinLoading}
-            typingSpeed={20}
-            title={
-              !canCheckin && !isCheckinLoading
-                ? `Already checked in today. Next reset: ${checkinCountdown || "calculating..."}`
-                : "Claim your free daily plays!"
-            }
-          >
-            {isCheckinLoading
-              ? "⏳ Loading..."
-              : canCheckin
-              ? "☀️ Daily Check-in (+3 Plays)"
-              : `✅ Checked In (Reset: ${checkinCountdown})`}
-          </TypingButton>
-        </div>
+    {/* Get More Plays Card - Daily Check-in + Buy Plays */}
+    <div className="card">
+          <h3>🎮 Get More Plays</h3>
+          
+          {/* Daily Check-in Button */}
+          <div style={{ marginBottom: "12px" }}>
+            <TypingButton
+              className="btn btn-success"
+              onClick={handleDailyGm}
+              disabled={!connected || !isReady || txStatus === "pending" || !canCheckin || isCheckinLoading}
+              typingSpeed={20}
+              title={
+                !canCheckin && !isCheckinLoading
+                  ? `Already checked in today. Next reset: ${checkinCountdown || "calculating..."}`
+                  : "Claim your free daily plays!"
+              }
+            >
+              {isCheckinLoading
+                ? "⏳ Loading..."
+                : canCheckin
+                ? "☀️ Daily Check-in (+3 Plays)"
+                : `✅ Checked In (Reset: ${checkinCountdown})`}
+            </TypingButton>
+          </div>
 
-     {/* Buy Plays Button - Moved below Leaderboard */}
-     <div style={{ textAlign: "center" }}>
-          <TypingButton
-            className="btn btn-primary"
-            onClick={() => setIsBuyPlaysOpen(true)}
-            disabled={!connected || !isReady || txStatus === "pending"}
-            typingSpeed={20}
-          >
-            💰 Buy Plays from Wallet
-          </TypingButton>
+          {/* Buy Plays Button */}
+          <div>
+            <TypingButton
+              className="btn btn-primary"
+              onClick={() => setIsBuyPlaysOpen(true)}
+              disabled={!connected || !isReady || txStatus === "pending"}
+              typingSpeed={20}
+            >
+              💰 Buy Plays from Wallet
+            </TypingButton>
+          </div>
         </div>
 
       </div>

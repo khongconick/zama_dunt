@@ -1324,111 +1324,108 @@ body.disabled::after {
 
 /* Unified Stats Panel - Warm Retro Style */
 .stats-panel-unified {
-  background:rgba(232, 227, 216, 0.95);
-  border-top: 2px solid #2D2D2D;
-  border-left: 2px solid #2D2D2D;
-  border-bottom: 5px solid #2D2D2D;
-  border-right: 5px solid #2D2D2D;
-  border-radius: 16px;
-  padding: 24px;
-  margin: 16px 0;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    0 2px 6px rgba(0, 0, 0, 0.06);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  box-shadow: none;
   backdrop-filter: none;
-}
-
-/* Removed panelPulse animation for warm theme */
-
-.stats-panel-header {
-  margin-bottom: 20px;
-  text-align: center;
-  border-bottom: 2px solid rgb(252, 211, 77);
-  padding-bottom: 12px;
-}
-
-.stats-panel-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #2D2D2D;
-  text-shadow: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .stat-item {
-  background: rgb(254, 243, 199);
-  border-top: 2px solid rgb(252, 211, 77);
-  border-left: 2px solid rgb(252, 211, 77);
-  border-bottom: 4px solid rgb(252, 211, 77);
-  border-right: 4px solid rgb(252, 211, 77);
-  border-radius: 12px;
-  padding: 20px 16px;
+  background: #F5F5F0;
+  border: 3px solid #2D2D2D;
+  border-radius: 16px;
+  padding: 20px 12px 16px;
   text-align: center;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 130px;
+  position: relative;
 }
 
 .stat-item:hover {
-  background: rgb(253, 230, 138);
-  border-color: var(--neon-cyan);
-  box-shadow: 0 4px 8px rgba(255, 153, 51, 0.2);
+  background: #FFFFFF;
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Gold variant for score */
+.stat-item-gold {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE8B3 100%);
+}
+
+.stat-item-gold:hover {
+  background: linear-gradient(135deg, #FFFCF0 0%, #FFEDC4 100%);
 }
 
 .stat-icon {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
   filter: none;
+  display: block;
+}
+
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #2D2D2D;
+  text-shadow: none;
+  margin-bottom: 8px;
+  display: block;
+  line-height: 1;
+}
+
+/* Gold text for score */
+.stat-item-gold .stat-value {
+  color: #D97706;
 }
 
 .stat-label {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #6B7280;
   font-family: 'Segoe UI', Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.stat-value {
-  font-size: 2.5rem;
-  font-weight: 800;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: var(--neon-cyan);
-  text-shadow: none;
+  font-weight: 700;
+  display: block;
+  line-height: 1.2;
 }
 
 .submit-score-btn {
   width: 100%;
-  margin-top: 10px;
-  padding: 14px 24px;
-  font-size: 1.1rem;
-  font-weight: 800;
+  margin-top: 4px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 16px;
+  letter-spacing: 1.2px;
+  border-radius: 12px;
+  border: 3px solid #2D2D2D !important;
 }
 
 .score-submitted-message {
   text-align: center;
-  padding: 14px 20px;
-  margin-top: 12px;
+  padding: 10px 14px;
+  margin-top: 8px;
   background: #D1FAE5;
   border: 2px solid #10B981;
-  border-radius: 12px;
+  border-radius: 10px;
   color: #065F46;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   text-shadow: none;
   animation: successFade 0.5s ease-out;
 }
@@ -1540,21 +1537,21 @@ body.disabled::after {
 .no-turns-display {
   background: rgba(244, 67, 54, 0.1);
   border: 1px solid rgba(244, 67, 54, 0.3);
-  border-radius: 12px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 12px;
   margin: 12px 0;
   text-align: center;
   box-shadow: var(--shadow-card);
 }
 
 .no-turns-title {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   color: #f44336;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .no-turns-message {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
 }
