@@ -1,49 +1,98 @@
-# 🦖 Crypto Dino Run - Blockchain Game
+<div align="center">
 
-An encrypted and provably fair endless runner game (Dinosaur Game style), developed with Zama's FHEVM, offering confidential rewards and secure gameplay on Ethereum.
+# 🦆 Duck Hunt Game
+### Play-to-Earn Arcade • Fully Encrypted Gameplay • Blockchain Rewards
 
-## 🎮 Live Demo
+[![Video Demo](https://youtu.be/59X45BoAaHY)](https://youtu.be/59X45BoAaHY)
+[![Powered by Zama](https://www.zama.ai/)](https://www.zama.ai/)
+[![Network](https://sepolia.etherscan.io/)](https://sepolia.etherscan.io/)
 
-**Play Now**: [https://zamafhe-silk.vercel.app/](https://zamafhe-silk.vercel.app/)
+**An encrypted and provably fair shooting arcade game built with Zama's FHEVM**  
+_Confidential rewards • Secure gameplay • On-chain encryption_
 
-- Tutorial: Use arrow keys or WASD to control your racer
+[🎮 Play Game](https://zamafhe-silk.vercel.app/) • [📜 Smart Contract](https://sepolia.etherscan.io/address/0xA433850DC1738b07393ea54F7FE4e825924aC9b8) • [🐦 Twitter](https://x.com/Huytran23994)
 
-### 🔐 **Confidential Gameplay Model**
-- **On-Chain Encrypted State**: Player information (races, pending ETH, scores) is fully protected with encryption on the blockchain.
-- **Confidential Actions**: Every in-game move is executed using encrypted inputs.
-- **ZK Verification**: Gameplay can be validated through zero-knowledge proofs without exposing the race results.
-- **Player-Controlled Decryption**: Users have full authority to decrypt and access their own data.
+</div>
 
-### 🎮 **How to Play**
-- **Dino Run Gameplay** (inspired by Chrome Dinosaur Game):
-  - Press Space, Up Arrow, or W to jump
-  - **Avoid cactus on the ground** - jump to dodge them
-  - **Score increases continuously** as you run (distance-based)
-  - Stay on ground when cactus passes = HIT!
-  - Speed increases over time
-  - Game lasts 15 seconds with increasing difficulty
-- **Game Rewards**: Score-based ETH rewards and daily leaderboard competitions
-- **KMS Claim System**: Decentralized ETH claiming with Key Management Service
+---
+
+## 📖 Table of Contents
+
+- [✨ Features](#-features)
+- [🎮 How to Play](#-how-to-play)
+- [🚀 Quick Start](#-quick-start)
+- [🔧 Smart Contracts](#-smart-contracts)
+- [🛠️ Development](#️-development)
+- [🔒 Security](#-security)
+- [🌐 Network Info](#-network-info)
+
+---
+
+## ✨ Features
+
+### 🔐 Confidential Gameplay Model
+
+<table>
+<tr>
+<td width="50%">
+
+**🔒 On-Chain Encrypted State**  
+Player info (races, ETH, scores) fully encrypted on blockchain
+
+**🎯 Confidential Actions**  
+All in-game moves use encrypted inputs
+
+</td>
+<td width="50%">
+
+**✅ ZK Verification**  
+Validate gameplay via zero-knowledge proofs
+
+**🔑 Player-Controlled Decryption**  
+Only you can decrypt your data
+
+</td>
+</tr>
+</table>
+
+### 🎮 Game Mechanics
+
+| Feature | Description |
+|---------|-------------|
+| 🦆 **Duck Hunt** | Classic arcade shooting gameplay |
+| ⏱️ **Duration** | 30-second hunting rounds |
+| 🎯 **Controls** | Click/Tap to shoot flying ducks |
+| 🔫 **Ammo System** | Limited bullets - aim carefully! |
+| 🦆 **Targets** | Ducks fly from grass in random patterns |
+| 📊 **Scoring** | Points per duck hit (varies by difficulty) |
+| 💰 **Rewards** | Score-based ETH rewards |
+| 🏆 **Leaderboard** | Daily competitions |
+| 🔐 **KMS Claim** | Decentralized ETH withdrawal |
+
+---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 20+
-- MetaMask wallet
-- Sepolia ETH for gas fees
+### 📋 Prerequisites
 
-### Installation
+```
+✅ Node.js 20+
+✅ MetaMask wallet
+✅ Sepolia ETH (for gas fees)
+```
 
-1. **Clone the repository**
+### 🛠️ Installation
+
+#### **Step 1: Clone the repository**
 ```bash
-git clone https://github.com/khongconick/zama_fhe_dunt.git
+git clone https://github.com/khongconick/zama_dunt.git
 cd zamafhe
 ```
 
-2. **Install dependencies**
+#### **Step 2: Install dependencies**
 ```bash
 # Frontend
-cd frontend-the-race
+cd frontend-fhe-dunt
 npm install
 
 # Backend (optional)
@@ -51,117 +100,203 @@ cd ../server
 npm install
 ```
 
-3. **Configure environment**
-```bash
-# Copy .env.example to .env
-cp .env.example .env
+#### **Step 3: Configure environment**
+Create a `.env` file in `frontend-fhe-dunt/`:
 
-# Update with your configuration
+```env
 REACT_APP_FHEVM_CONTRACT_ADDRESS=0xA433850DC1738b07393ea54F7FE4e825924aC9b8
 REACT_APP_RELAYER_URL=https://relayer.testnet.zama.cloud
 REACT_APP_SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your-api-key
 REACT_APP_ETHERSCAN_API_KEY=your-etherscan-api-key
 ```
 
-4. **Start the application**
+#### **Step 4: Start the application**
 ```bash
-# Frontend
-cd frontend-the-race
-npm start
-
-# Backend (optional)
-cd ../server
+cd frontend-fhe-dunt
 npm start
 ```
 
-5. **Connect your wallet**
-- Open MetaMask and connect to Sepolia Testnet
-- Connect your wallet to the application
-- Grant user-decrypt authorization when prompted
+🎉 Open http://localhost:3000 in your browser!
+
+#### **Step 5: Connect your wallet**
+1. 🦊 Open MetaMask and switch to **Sepolia Testnet**
+2. 🔗 Click "Connect Wallet" in the app
+3. ✅ Grant user-decrypt authorization when prompted
+
+---
 
 ## 🎯 How to Play
 
-### 1. **Get Started**
-- Connect your MetaMask wallet
-- Buy plays from your wallet to start playing
+<div align="center">
 
-### 2. **Play the Dino Run**
-- Click "🦖 Start Running" to begin the 15-second running game
-- Press Space, Up Arrow, or W to jump
-- **Jump to avoid cactus on the ground**
-- **Score increases automatically** as you run (distance-based scoring)
-- Stay on ground when cactus passes = HIT!
-- Speed and difficulty increase over time (faster cactus, more frequent spawns)
-- Your total score determines your rewards
+### 🎮 Three Simple Steps
 
-### 3. **Submit Score & Compete**
-- **Submit Total Score**: After playing multiple rounds, submit your accumulated score to the wallet
-- **Leaderboard**: Your published score appears on the leaderboard to compete with others
+</div>
+
+```
+┌─────────────────────┐      ┌─────────────────────┐      ┌─────────────────────┐
+│  1️⃣ Get Started    │  →   │  2️⃣ Hunt & Shoot   │  →   │  3️⃣ Submit & Win   │
+└─────────────────────┘      └─────────────────────┘      └─────────────────────┘
+```
+
+### 1️⃣ **Get Started**
+- 🔗 Connect your MetaMask wallet
+- 💳 Buy plays with ETH to start gaming
+- ✨ Daily check-in for free plays!
+
+### 2️⃣ **Hunt the Ducks**
+
+<table>
+<tr>
+<td width="50%">
+
+**🎮 Gameplay**
+- Click **"🦆 Start Hunting"** to begin
+- 30-second rounds
+- Ducks fly from grass randomly
+- Limited ammo per round
+- Each hit = points!
+
+</td>
+<td width="50%">
+
+**🖱️ Controls**
+- **Click/Tap** = Shoot
+- **Aim carefully** - bullets are limited! 🔫
+- **Hit ducks** = Score points! 🎯
+- **Miss too much** = Lower score 💨
+
+</td>
+</tr>
+</table>
+
+> 💡 **Pro Tip**: Lead your shots! Ducks move fast, so aim slightly ahead of their flight path for better accuracy.
+
+### 3️⃣ **Submit Score & Compete**
+- 📤 **Submit Total Score**: Upload your accumulated score to blockchain
+- 🏆 **Leaderboard**: Compete with players worldwide
+- 💰 **Claim Rewards**: Earn ETH based on your performance
+
+---
 
 ## 🔧 Smart Contracts
 
-### Contract Addresses
-```
-Sepolia: 0xA433850DC1738b07393ea54F7FE4e825924aC9b8 (CryptoDinoRun_KMS_Final)
-```
+### 📍 Contract Addresses
 
-### Key Functions
-- `publishScore(uint256 score)` - Submit your score to the blockchain
-- `dailyGm()` - Daily check-in for free plays
-- `buyGmTokensFHE()` - Buy GM tokens with ETH to purchase plays
-- `requestClaimETH(uint256 amountWei)` - Request ETH withdrawal
-- `getEncryptedPendingEthWei(address user)` - Get encrypted pending ETH
-- `getEncryptedScore(address user)` - Get encrypted score
+<div align="center">
+
+| Network | Contract Name | Address |
+|---------|--------------|---------|
+| 🔷 **Sepolia Testnet** | ZamaFheDunt_KMS_Final | [`0xA433...C9b8`](https://sepolia.etherscan.io/address/0xA433850DC1738b07393ea54F7FE4e825924aC9b8) |
+
+</div>
+
+### 🔑 Key Functions
+
+| Function | Description | Usage |
+|----------|-------------|-------|
+| 📤 `publishScore(uint256)` | Submit score to blockchain | End of game |
+| 🎁 `dailyGm()` | Daily check-in for free plays | Once per day |
+| 💳 `buyGmTokensFHE()` | Buy GM tokens with ETH | Purchase plays |
+| 💰 `requestClaimETH(uint256)` | Request ETH withdrawal | Claim rewards |
+| 🔒 `getEncryptedPendingEthWei(address)` | Get encrypted pending ETH | View balance |
+| 📊 `getEncryptedScore(address)` | Get encrypted score | View stats |
+
+---
 
 ## 🛠️ Development
 
-### Project Structure
+### 📁 Project Structure
+
 ```
-cryptoracezamaFHE/
-├── contracts/                    # Smart contracts
-├── frontend-the-race/           # React frontend
-├── server/                      # Express API server
-├── deploy/                      # Deployment scripts
-├── scripts/                     # Utility scripts
-└── README.md
+zamafhe/
+├── 📄 contracts/              # Smart contracts (Solidity)
+├── 🎨 frontend-fhe-dunt/     # React frontend application
+├── 🖥️  server/                # Express API server
+├── 🚀 deploy/                # Deployment scripts
+├── 🔧 scripts/               # Utility scripts
+└── 📖 README.md
 ```
 
-### Development Commands
+### 💻 Development Commands
+
 ```bash
-# Compile contracts
+# Compile smart contracts
 npx hardhat compile
 
-# Deploy to Sepolia
+# Deploy to Sepolia testnet
 npx hardhat run deploy/06b_deploy_kms_final_js.js --network sepolia
 
-# Start frontend
-cd frontend-the-race
-npm start
+# Start frontend development server
+cd frontend-fhe-dunt && npm start
 
 # Build for production
-cd frontend-the-race
-npm run build
+cd frontend-fhe-dunt && npm run build
 ```
 
-## 🔒 Security Features
+---
 
-- **Encryption**: All sensitive data encrypted on-chain using FHE
-- **Access Control**: ACL system for data permissions
-- **Verification**: EIP-712 signatures for secure authorization
-- **Commitment Scheme**: For race outcomes
+## 🔒 Security
 
-## 🌐 Network Configuration
+<div align="center">
 
-### Sepolia Testnet
-- **RPC URL**: `https://rpc.sepolia.org`
-- **Chain ID**: 11155111
-- **Block Explorer**: https://sepolia.etherscan.io
-- **Faucet**: https://sepoliafaucet.com
+### 🛡️ Multi-Layer Security Architecture
 
-## Acknowledgments
+</div>
 
-- **Zama Team** - For the amazing FHEVM technology
-- **Ethereum Foundation** - For the blockchain infrastructure
-- **MetaMask** - For wallet integration
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| 🔐 **Encryption** | Zama FHEVM | All sensitive data encrypted on-chain |
+| 🎫 **Access Control** | ACL System | Granular data permissions |
+| ✍️ **Verification** | EIP-712 Signatures | Secure authorization |
+| 🔏 **Commitment** | Cryptographic Scheme | Immutable race outcomes |
 
-## Created by: [Huytran23994](https://x.com/Huytran23994)
+> 🔒 **Privacy First**: Your gameplay data remains confidential while being verifiable on-chain.
+
+---
+
+## 🌐 Network Info
+
+### Sepolia Testnet Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| 🌐 **RPC URL** | `https://rpc.sepolia.org` |
+| 🔢 **Chain ID** | `11155111` |
+| 🔍 **Explorer** | [sepolia.etherscan.io](https://sepolia.etherscan.io) |
+| 💧 **Faucet** | [sepoliafaucet.com](https://sepoliafaucet.com) |
+
+---
+
+## 🙏 Acknowledgments
+
+<div align="center">
+
+**Built with ❤️ using cutting-edge blockchain technology**
+
+| Team | Contribution |
+|------|--------------|
+| 🔐 **Zama** | FHEVM technology & encryption infrastructure |
+| ⚡ **Ethereum** | Blockchain infrastructure & testnet |
+| 🦊 **MetaMask** | Wallet integration & user authentication |
+
+</div>
+
+---
+
+<div align="center">
+
+### 👨‍💻 Created by
+
+**[Huytran23994](https://x.com/Huytran23994)**
+
+[![Twitter](https://img.shields.io/badge/Follow-@Huytran23994-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/Huytran23994)
+[![GitHub](https://img.shields.io/badge/GitHub-khongconick-181717?style=for-the-badge&logo=github)](https://github.com/khongconick)
+
+---
+
+**⭐ Star this repo if you found it helpful!**
+
+[🎮 Play Now](https://zamafhe-silk.vercel.app/) • [📜 View Contract](https://sepolia.etherscan.io/address/0xA433850DC1738b07393ea54F7FE4e825924aC9b8) • [🐛 Report Bug](https://github.com/khongconick/zama_fhe_dunt/issues)
+
+</div>
