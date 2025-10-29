@@ -114,8 +114,8 @@ async function main() {
 
   try {
     const [deployer] = await ethers.getSigners();
-    const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-    const luckyRaceFHE = CryptoDinoRun_Simple.attach(contractAddress);
+    const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+    const luckyRaceFHE = ZamaFheDunt_Simple.attach(contractAddress);
 
     const owner = await luckyRaceFHE.owner();
     console.log("✅ Contract Owner:", owner);

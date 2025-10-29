@@ -6,11 +6,11 @@ async function verifyContractStatus() {
   // Contract addresses to check
   const contracts = [
     {
-      name: "CryptoDinoRun_Simple",
+      name: "ZamaFheDunt_Simple",
       address: "0xb3f5D86c5a7C6F8F58cd0629259e02f4FEb441F2"
     },
     {
-      name: "CryptoDinoRun_ACL_Simple", 
+      name: "ZamaFheDunt_ACL_Simple", 
       address: "0xE334A43F3eb88eAf1CaeE6Fa64873feB94D7588A"
     }
   ];
@@ -33,12 +33,12 @@ async function verifyContractStatus() {
       // Try to get contract instance
       let contract;
       try {
-        if (contractInfo.name === "CryptoDinoRun_Simple") {
-          const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-          contract = CryptoDinoRun_Simple.attach(contractInfo.address);
-        } else if (contractInfo.name === "CryptoDinoRun_ACL_Simple") {
-          const CryptoDinoRun_ACL_Simple = await ethers.getContractFactory("CryptoDinoRun_ACL_Simple");
-          contract = CryptoDinoRun_ACL_Simple.attach(contractInfo.address);
+        if (contractInfo.name === "ZamaFheDunt_Simple") {
+          const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+          contract = ZamaFheDunt_Simple.attach(contractInfo.address);
+        } else if (contractInfo.name === "ZamaFheDunt_ACL_Simple") {
+          const ZamaFheDunt_ACL_Simple = await ethers.getContractFactory("ZamaFheDunt_ACL_Simple");
+          contract = ZamaFheDunt_ACL_Simple.attach(contractInfo.address);
         }
       } catch (error) {
         console.log("⚠️ Could not create contract instance:", error.message);

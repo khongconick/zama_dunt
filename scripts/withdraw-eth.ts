@@ -6,8 +6,8 @@ async function main() {
   const amount = ethers.parseEther("0.1"); // 0.1 ETH
 
   // Lấy instance contract
-  const CryptoDinoRun_Complete = await ethers.getContractFactory("CryptoDinoRun_Complete");
-  const luckyRaceFHE = CryptoDinoRun_Complete.attach(contractAddress);
+  const ZamaFheDunt_Complete = await ethers.getContractFactory("ZamaFheDunt_Complete");
+  const luckyRaceFHE = ZamaFheDunt_Complete.attach(contractAddress);
 
   // Lấy signer admin
   const [admin] = await ethers.getSigners();

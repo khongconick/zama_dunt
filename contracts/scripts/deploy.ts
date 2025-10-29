@@ -4,12 +4,12 @@ async function main() {
   console.log("🚀 Starting deployment...");
 
   // Get the contract factory
-  const CryptoDinoRun = await ethers.getContractFactory("CryptoDinoRun_KMS_Final");
+  const ZamaFheDunt = await ethers.getContractFactory("ZamaFheDunt_KMS_Final");
   
-  console.log("📝 Deploying CryptoDinoRun_KMS_Final...");
+  console.log("📝 Deploying ZamaFheDunt_KMS_Final...");
   
   // Deploy the contract
-  const contract = await CryptoDinoRun.deploy();
+  const contract = await ZamaFheDunt.deploy();
   
   // Wait for deployment to finish
   await contract.waitForDeployment();

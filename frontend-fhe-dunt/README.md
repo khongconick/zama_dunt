@@ -36,7 +36,7 @@ npm start
 - Node.js 16+
 - MetaMask hoặc wallet tương thích
 - Sepolia testnet ETH
-- Contract CryptoDinoRun_Complete.sol đã được deploy
+- Contract ZamaFheDunt_Complete.sol đã được deploy
 
 ## ⚙️ Cấu hình
 

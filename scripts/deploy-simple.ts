@@ -1,18 +1,18 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  console.log("🚀 Deploying CryptoDinoRun_Simple to Sepolia Testnet...");
+  console.log("🚀 Deploying ZamaFheDunt_Simple to Sepolia Testnet...");
 
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with account:", deployer.address);
 
   // Deploy the contract
-  const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-  const luckyRaceFHE = await CryptoDinoRun_Simple.deploy();
+  const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+  const luckyRaceFHE = await ZamaFheDunt_Simple.deploy();
   await luckyRaceFHE.waitForDeployment();
 
   const contractAddress = await luckyRaceFHE.getAddress();
-  console.log(`✅ CryptoDinoRun_Simple deployed to: ${contractAddress}`);
+  console.log(`✅ ZamaFheDunt_Simple deployed to: ${contractAddress}`);
 
   // Verify deployment
   console.log("\n🔍 Verifying deployment...");

@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  console.log("🚀 Deploying CryptoDinoRun_Simple...");
+  console.log("🚀 Deploying ZamaFheDunt_Simple...");
   
   // Get deployer account
   const [deployer] = await ethers.getSigners();
@@ -9,13 +9,13 @@ async function main() {
   console.log("💰 Account balance:", (await deployer.provider.getBalance(deployer.address)).toString());
 
   // Deploy the contract
-  const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-  const contract = await CryptoDinoRun_Simple.deploy();
+  const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+  const contract = await ZamaFheDunt_Simple.deploy();
   
   await contract.waitForDeployment();
   
   const contractAddress = await contract.getAddress();
-  console.log("✅ CryptoDinoRun_Simple deployed to:", contractAddress);
+  console.log("✅ ZamaFheDunt_Simple deployed to:", contractAddress);
   
   // Verify deployment
   console.log("🔍 Verifying deployment...");

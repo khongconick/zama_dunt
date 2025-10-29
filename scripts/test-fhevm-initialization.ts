@@ -80,8 +80,8 @@ async function main() {
   
   try {
     const [deployer] = await ethers.getSigners();
-    const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-    const luckyRaceFHE = CryptoDinoRun_Simple.attach("0xb3f5D86c5a7C6F8F58cd0629259e02f4FEb441F2");
+    const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+    const luckyRaceFHE = ZamaFheDunt_Simple.attach("0xb3f5D86c5a7C6F8F58cd0629259e02f4FEb441F2");
     
     console.log("✅ Contract accessible");
     console.log("✅ Deployer:", deployer.address);

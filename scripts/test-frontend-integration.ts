@@ -1,7 +1,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  console.log("🧪 Testing Frontend Integration with CryptoDinoRun_Simple...");
+  console.log("🧪 Testing Frontend Integration with ZamaFheDunt_Simple...");
 
   const contractAddress = "0xb3f5D86c5a7C6F8F58cd0629259e02f4FEb441F2";
 
@@ -10,8 +10,8 @@ async function main() {
 
   try {
     // Get contract instance
-    const CryptoDinoRun_Simple = await ethers.getContractFactory("CryptoDinoRun_Simple");
-    const luckyRaceFHE = CryptoDinoRun_Simple.attach(contractAddress);
+    const ZamaFheDunt_Simple = await ethers.getContractFactory("ZamaFheDunt_Simple");
+    const luckyRaceFHE = ZamaFheDunt_Simple.attach(contractAddress);
 
     // Test all frontend-relevant functions
     console.log("\n📊 Testing Frontend Integration Functions...");

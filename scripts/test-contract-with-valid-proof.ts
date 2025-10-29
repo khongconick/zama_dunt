@@ -12,8 +12,8 @@ async function testContractWithValidProof() {
     console.log("🔑 Using signer:", signer.address);
 
     // Get contract
-    const CryptoDinoRun_ACL_Simple = await ethers.getContractFactory("CryptoDinoRun_ACL_Simple");
-    const contract = CryptoDinoRun_ACL_Simple.attach(contractAddress);
+    const ZamaFheDunt_ACL_Simple = await ethers.getContractFactory("ZamaFheDunt_ACL_Simple");
+    const contract = ZamaFheDunt_ACL_Simple.attach(contractAddress);
     console.log("📋 Contract attached to:", contractAddress);
 
     // Test basic contract functions first

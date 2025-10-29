@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 
 // ✅ Configuration sử dụng environment variables từ .env file (REACT_APP prefix)
 export const CONFIG = {
-  // ✅ FHEVM Contract Configuration - CryptoDinoRun_Strict (New Deployment)
+  // ✅ FHEVM Contract Configuration - ZamaFheDunt_Strict (New Deployment)
   FHEVM_CONTRACT_ADDRESS: process.env.REACT_APP_FHEVM_CONTRACT_ADDRESS || "0xA433850DC1738b07393ea54F7FE4e825924aC9b8",
 
   // ✅ Alternative contract addresses for testing

@@ -66,7 +66,7 @@ npm start
 
 ### Cấu hình Contract
 
-- **Main Contract**: CryptoDinoRun với FHE encryption
+- **Main Contract**: ZamaFheDunt với FHE encryption
 - **Zama Standard Contract**: Contract chuẩn của Zama
 - **Zama FHEVM Standard Contract**: Contract FHEVM chuẩn
 
