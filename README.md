@@ -3,14 +3,14 @@
 # 🦆 Duck Hunt Game
 ### Play-to-Earn Arcade • Fully Encrypted Gameplay • Blockchain Rewards
 
-[![Live Demo](https://img.shields.io/badge/🎮_Play_Now-Live_Demo-success?style=for-the-badge)](https://zamafhe-silk.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🎮_Play_Now-Live_Demo-success?style=for-the-badge)](https://zama-dunt.vercel.app/)
 [![Powered by Zama](https://img.shields.io/badge/Powered_by-Zama_FHEVM-blue?style=for-the-badge)](https://www.zama.ai/)
 [![Network](https://img.shields.io/badge/Network-Sepolia_Testnet-orange?style=for-the-badge)](https://sepolia.etherscan.io/)
 
 **An encrypted and provably fair shooting arcade game built with Zama's FHEVM**  
 _Confidential rewards • Secure gameplay • On-chain encryption_
 
-[🎮 Play Game](https://zamafhe-silk.vercel.app/) • [📜 Smart Contract](https://sepolia.etherscan.io/address/0xA433850DC1738b07393ea54F7FE4e825924aC9b8) • [🐦 Twitter](https://x.com/Huytran23994)
+[🎮 Play Game](https://zama-dunt.vercel.app/) • [📜 Smart Contract](https://sepolia.etherscan.io/address/0xA433850DC1738b07393ea54F7FE4e825924aC9b8) • [🐦 Twitter](https://x.com/Huytran23994)
 
 </div>
 
