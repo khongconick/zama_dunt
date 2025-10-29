@@ -1,8 +1,8 @@
 {
-  "buildCommand": "cd frontend-fhe-race && npm install && npm run build",
-  "outputDirectory": "frontend-fhe-race/build",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "build",
   "framework": "create-react-app",
-  "installCommand": "cd frontend-fhe-race && npm install",
+  "installCommand": "npm install",
   "headers": [
     {
       "source": "/(.*)",
